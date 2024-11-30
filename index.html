@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Cliques</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    .contador { font-size: 50px; font-weight: bold; }
+    .verde { color: green; }
+    .vermelho { color: red; }
+    button { padding: 10px 20px; font-size: 20px; cursor: pointer; margin: 10px; }
+  </style>
+</head>
+<body>
+  <div id="contador">0</div>
+  <button onclick="alterarContador(1)">Crescente</button>
+  <button onclick="alterarContador(-1)">Decrecente</button>
+
+  <script>
+    let contador = 0;
+    function alterarContador(valor) {
+      contador += valor;
+      const contadorElement = document.getElementById('contador');
+      contadorElement.textContent = contador;
+      contadorElement.className = contador > 0 ? 'contador verde' : (contador < 0 ? 'contador vermelho' : 'contador');
+    }
+  </script>
+</body>
+</html>
